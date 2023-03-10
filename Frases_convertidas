@@ -1,0 +1,270 @@
+#include<stdio.h> 
+
+#include<stdlib.h> 
+
+ 
+ 
+
+#include<locale.h> 
+
+#include <ctype.h> 
+
+#include<string.h> 
+
+#include <ctype.h> 
+
+#include <stdio.h> 
+
+#include <string.h> 
+
+#include <windows.h> 
+
+int main(){ 
+
+    setlocale(LC_ALL, "Portuguese");//Permite a utilização de acentos e letras em português 
+
+    int i,c,tamanho; 
+
+    char arquivo[10]; 
+
+     
+
+    char frase1[50]; 
+
+    char frase2[50]; 
+
+    char frase3[50]; 
+
+    char frase4[50]; 
+
+    char frase5[50]; 
+
+ 
+ 
+ 
+
+    printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n"); 
+
+    printf("-=-=-=-CRIADOR DE ARQUIVOS-=-=-=-\n"); 
+
+    printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n"); 
+
+     
+
+    printf("Digite o nome do arquivo: "); 
+
+    gets(arquivo); 
+
+     
+
+    FILE*file; 
+
+    file = fopen(arquivo,"w"); 
+
+     
+
+     
+
+     
+
+    //primeira frase 
+
+    printf("Digite a primeira fase:\n "); 
+
+    fgets(frase1,50,stdin); 
+
+    tamanho = strlen(frase1); 
+
+     
+
+    for(i = 0;i<tamanho;i++) { 
+
+        frase1[i] = toupper(frase1[i]); 
+
+        c++; 
+
+    } 
+
+     
+
+    //segunda frase 
+
+    printf("Digite a segunda fase:\n "); 
+
+    fgets(frase2,50,stdin); 
+
+    tamanho = strlen(frase2); 
+
+     
+
+    for(i = 0;i<tamanho;i++) { 
+
+        frase2[i] = toupper(frase2[i]); 
+
+    } 
+
+     
+
+    //terceira frase 
+
+    printf("Digite a terceira fase:\n "); 
+
+    fgets(frase3,50,stdin); 
+
+    tamanho = strlen(frase3); 
+
+     
+
+     
+
+     
+
+    for(i = 0;i<tamanho;i++) { 
+
+        frase3[i] = toupper(frase3[i]); 
+
+    } 
+
+    //quarta frase 
+
+    printf("Digite a quarta fase:\n "); 
+
+    fgets(frase4,50,stdin); 
+
+    tamanho = strlen(frase4); 
+
+     
+
+     
+
+     
+
+    for(i = 0;i<tamanho;i++) { 
+
+        frase4[i] = toupper(frase4[i]); 
+
+    } 
+
+     
+
+    //quinta frase 
+
+    printf("Digite a quinta fase:\n "); 
+
+    fgets(frase5,50,stdin); 
+
+    tamanho = strlen(frase5); 
+
+     
+
+     
+
+     
+
+    for(i = 0;i<tamanho;i++) { 
+
+        frase5[i] = toupper(frase5[i]); 
+
+    } 
+
+     
+
+    fputs(frase1,file); 
+
+    fputs(frase2,file); 
+
+    fputs(frase3,file); 
+
+    fputs(frase4,file); 
+
+    fputs(frase5,file); 
+
+ 
+ 
+
+     
+
+         
+
+    fclose(file); 
+
+     
+
+     
+
+     
+
+     
+
+    //lendo o arquivo 
+
+    printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n"); 
+
+    printf("-=-=-=-=-=ABRINDO O ARQUIVO-=-=-=-=\n"); 
+
+    printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n"); 
+
+ 
+ 
+
+    file = fopen(arquivo,"r"); 
+
+    if(file == NULL){ 
+
+        printf("Arquivo nao pode ser aberto\n"); 
+
+        getchar(); 
+
+        exit (0); 
+
+    } 
+
+     
+
+    char frase[250]; 
+
+    while(fgets(frase,250,file)!=NULL) { 
+
+        printf("%s",frase); 
+
+     
+
+     
+
+     
+
+    } 
+
+     
+
+     
+
+     
+
+     
+
+     
+
+     
+
+     
+
+     
+
+     
+
+     
+
+     
+
+     
+
+     
+
+     
+
+    system("pause"); 
+
+    return 0; 
+
+} 
